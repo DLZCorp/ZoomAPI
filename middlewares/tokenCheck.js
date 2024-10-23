@@ -7,7 +7,7 @@ const { getToken, setToken } = require('../utils/token');
   */
 const tokenCheck = async (req, res, next) => {
   const redis_token = await redis.get('access_token');
-
+  console.log(redis_token);
   let token = redis_token;
 
   /**

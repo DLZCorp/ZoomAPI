@@ -45,8 +45,8 @@ app.options('*', cors());
   * Add API Routes w/ tokenCheck middleware
   */
 app.use('/api/users', tokenCheck, require('./routes/api/users'));
-app.use('/api/meetings', tokenCheck, require('./routes/api/meetings'));
-app.use('/api/webinars', tokenCheck, require('./routes/api/webinars'));
+// app.use('/api/meetings', tokenCheck, require('./routes/api/meetings'));
+// app.use('/api/webinars', tokenCheck, require('./routes/api/webinars'));
 
 /**
   *    API Route Breakdown:

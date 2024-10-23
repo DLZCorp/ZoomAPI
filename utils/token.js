@@ -12,19 +12,21 @@ const redis = require('../configs/redis');
 const getToken = async () => {
   try {
     const { ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET } = process.env;
-
+    console.log(ZOOM_CLIENT_SECRET, ZOOM_CLIENT_ID, ZOOM_ACCOUNT_ID);
     const request = await axios.post(
       ZOOM_OAUTH_ENDPOINT,
       qs.stringify({ grant_type: 'account_credentials', account_id: ZOOM_ACCOUNT_ID }),
       {
         headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
           Authorization: `Basic ${Buffer.from(`${ZOOM_CLIENT_ID}:${ZOOM_CLIENT_SECRET}`).toString('base64')}`,
         },
       },
     );
-
+    console.log(await request.data)
     const { access_token, expires_in } = await request.data;
-
+    console.log('Access Token', access_token);
+    console.log('Expires in', expires_in);
     return { access_token, expires_in, error: null };
   } catch (error) {
     return { access_token: null, expires_in: null, error };
