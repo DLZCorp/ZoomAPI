@@ -1,0 +1,42 @@
+\\ Add Zoom user with license and phone
+{
+  "action":"create",
+  "user_info":{
+    "email":"jdbloggins@dlz.com",
+    "first_name": "Joe",
+    "last_name": "Bloggins",
+    "type":2,
+    "feature":{
+      "zoom_phone":true,
+      "zoom_one_type":8
+    }
+  }
+}
+
+// basic plan with phone
+{
+  "action":"create",
+  "user_info":{
+    "email":"jdbloggins@dlz.com",
+    "first_name": "Joe",
+    "last_name": "Bloggins",
+    "type":1,
+    "feature":{
+      "zoom_phone":true,
+      "zoom_one_type":8
+    }
+  }
+}
+
+
+// basic plan, no phone
+{
+  "action":"create",
+  "user_info":{
+    "email":"jdbloggins@dlz.com",
+    "first_name": "Joe",
+    "last_name": "Bloggins",
+    "type":1
+  }
+}
+
